@@ -16,6 +16,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'MindSpace - Your Space to Feel Better at Work',
   description: 'Ruang Aman untuk Kesejahteraan Psikologis Karyawan',
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/icon.svg',
+  },
 }
 
 export default function RootLayout({
