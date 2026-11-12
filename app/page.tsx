@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import { createClient } from '@/lib/supabase/server'
 import { Brand } from '@/components/ui'
+import LogoutButton from '@/components/LogoutButton'
 
 const BIDANG_PSIKOLOGI = [
   {
@@ -126,46 +128,86 @@ const PERATURAN = [
   },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  let profile: { id: string; role: string; full_name: string } | null = null
+  if (user) {
+    const { data } = await supabase
+      .from('profiles')
+      .select('id, role, full_name')
+      .eq('id', user.id)
+      .maybeSingle()
+    profile = data
+  }
+
+  const dashboardHref = profile?.role === 'konselor' ? '/konselor' : '/konseli'
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* Navbar Publik */}
+      {/* Navbar Terhubung */}
       <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Brand />
           <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-            <a href="#bidang" className="text-slate-600 hover:text-teal-800">
+            <a href="#bidang" className="text-slate-600 hover:text-teal-800 transition">
               Bidang Layanan
             </a>
-            <a href="#artikel" className="text-slate-600 hover:text-teal-800">
+            <a href="#artikel" className="text-slate-600 hover:text-teal-800 transition">
               Artikel Ilmiah
             </a>
-            <a href="#peraturan" className="text-slate-600 hover:text-teal-800">
+            <a href="#peraturan" className="text-slate-600 hover:text-teal-800 transition">
               Peraturan
             </a>
-            <Link href="/kontak" className="text-slate-600 hover:text-teal-800">
+            <Link href="/kontak" className="text-slate-600 hover:text-teal-800 transition">
               Call Center & Chatbot
             </Link>
           </nav>
+
           <div className="flex items-center gap-2">
-            <Link
-              href="/login"
-              className="rounded-lg px-4 py-2 text-sm font-medium text-teal-800 hover:bg-teal-50"
-            >
-              Masuk
-            </Link>
-            <Link
-              href="/register"
-              className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-800"
-            >
-              Daftar
-            </Link>
+            {profile ? (
+              <div className="flex items-center gap-3">
+                <div className="hidden sm:flex flex-col text-right">
+                  <span className="text-xs font-semibold text-slate-500 uppercase">
+                    {profile.role === 'konselor' ? 'Psikolog' : 'Konseli'}
+                  </span>
+                  <span className="text-xs font-bold text-slate-800 max-w-[140px] truncate">
+                    {profile.full_name}
+                  </span>
+                </div>
+                <Link
+                  href={dashboardHref}
+                  className="rounded-xl bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-xs hover:bg-teal-800 transition"
+                >
+                  Dashboard Saya
+                </Link>
+                <LogoutButton />
+              </div>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="rounded-xl px-4 py-2 text-sm font-medium text-teal-800 hover:bg-teal-50 transition"
+                >
+                  Masuk
+                </Link>
+                <Link
+                  href="/register"
+                  className="rounded-xl bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-xs hover:bg-teal-800 transition"
+                >
+                  Daftar
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-teal-50/60 to-white py-16 px-4 text-center sm:py-24">
+      <section className="border-b border-slate-200 bg-gradient-to-b from-teal-50/70 via-white to-white py-16 px-4 text-center sm:py-24">
         <div className="mx-auto max-w-3xl">
           <div className="inline-block rounded-full bg-teal-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal-800">
             Layanan Psikologi Karyawan
@@ -180,21 +222,30 @@ export default function HomePage() {
             Ruang Aman untuk Kesejahteraan Psikologis Karyawan. Dapatkan pendampingan profesional dari psikolog berpengalaman sesuai kebutuhan Anda.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/register"
-              className="rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white shadow-sm hover:bg-teal-800"
-            >
-              Mulai Konsultasi Sekarang
-            </Link>
+            {profile ? (
+              <Link
+                href={dashboardHref}
+                className="rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white shadow-xs hover:bg-teal-800 transition"
+              >
+                Buka Dashboard Anda ({profile.role === 'konselor' ? 'Konselor' : 'Konseli'})
+              </Link>
+            ) : (
+              <Link
+                href="/register"
+                className="rounded-xl bg-teal-700 px-6 py-3 font-semibold text-white shadow-xs hover:bg-teal-800 transition"
+              >
+                Mulai Konsultasi Sekarang
+              </Link>
+            )}
             <a
               href="#bidang"
-              className="rounded-xl border border-teal-700 px-6 py-3 font-semibold text-teal-800 hover:bg-teal-50"
+              className="rounded-xl border border-teal-700 bg-white px-6 py-3 font-semibold text-teal-800 hover:bg-teal-50 transition"
             >
-              Lihat Bidang Psikologi
+              Lihat 6 Bidang Psikologi
             </a>
             <Link
               href="/kontak"
-              className="rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 hover:bg-slate-50"
+              className="rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 hover:bg-slate-50 transition"
             >
               Call Center / Chatbot
             </Link>
@@ -221,14 +272,14 @@ export default function HomePage() {
             {BIDANG_PSIKOLOGI.map((b) => (
               <div
                 key={b.nomor}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-teal-400"
+                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs transition hover:shadow-md hover:border-teal-400"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-teal-100 font-bold text-teal-800 text-sm">
                       {b.nomor}
                     </span>
-                    <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600">
+                    <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
                       {b.tag}
                     </span>
                   </div>
@@ -242,6 +293,18 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          {profile?.role === 'konseli' && (
+            <div className="mt-6 text-center sm:text-left">
+              <Link
+                href="/konseli/bidang"
+                className="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-800 transition"
+              >
+                <span>Pilih Psikolog & Buat Janji Sekarang</span>
+                <span>&rarr;</span>
+              </Link>
+            </div>
+          )}
         </section>
 
         {/* 2. Artikel Ilmiah */}
@@ -262,11 +325,11 @@ export default function HomePage() {
             {ARTIKEL_ILMIAH.map((art) => (
               <article
                 key={art.id}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs text-slate-500">
-                    <span className="font-medium text-teal-700">{art.kategori}</span>
+                    <span className="font-semibold text-teal-700">{art.kategori}</span>
                     <span>{art.tanggal}</span>
                   </div>
                   <h3 className="mt-3 text-base font-bold leading-snug text-slate-900">
@@ -303,9 +366,9 @@ export default function HomePage() {
             {PERATURAN.map((p, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs"
               >
-                <h3 className="font-semibold text-slate-900">{p.judul}</h3>
+                <h3 className="font-bold text-slate-900">{p.judul}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{p.isi}</p>
               </div>
             ))}
@@ -313,21 +376,30 @@ export default function HomePage() {
         </section>
 
         {/* Banner Ajakan Konseling */}
-        <section className="rounded-3xl bg-teal-800 p-8 text-white text-center sm:p-12">
+        <section className="rounded-3xl bg-teal-800 p-8 text-white text-center sm:p-12 shadow-md">
           <h2 className="text-2xl font-bold sm:text-3xl">Siap Mencapai Kesejahteraan di Tempat Kerja?</h2>
           <p className="mx-auto mt-3 max-w-xl text-teal-100 text-sm sm:text-base">
             Jangan ragu untuk mencari bantuan. Konseling adalah langkah awal yang berani untuk merawat kesehatan mental Anda.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/register"
-              className="rounded-xl bg-white px-6 py-3 font-semibold text-teal-900 hover:bg-teal-50"
-            >
-              Daftar Sebagai Konseli
-            </Link>
+            {profile ? (
+              <Link
+                href={dashboardHref}
+                className="rounded-xl bg-white px-6 py-3 font-semibold text-teal-900 hover:bg-teal-50 transition"
+              >
+                Masuk ke Dashboard Saya
+              </Link>
+            ) : (
+              <Link
+                href="/register"
+                className="rounded-xl bg-white px-6 py-3 font-semibold text-teal-900 hover:bg-teal-50 transition"
+              >
+                Daftar Sebagai Konseli
+              </Link>
+            )}
             <Link
               href="/kontak"
-              className="rounded-xl border border-teal-300 px-6 py-3 font-semibold text-white hover:bg-teal-700"
+              className="rounded-xl border border-teal-300 px-6 py-3 font-semibold text-white hover:bg-teal-700 transition"
             >
               Hubungi Call Center / Bot
             </Link>
@@ -343,22 +415,28 @@ export default function HomePage() {
             <p className="mt-1 text-sm text-slate-500">Your Space to Feel Better at Work</p>
             <p className="text-xs text-slate-400">Ruang Aman untuk Kesejahteraan Psikologis Karyawan</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#bidang" className="hover:text-teal-800">
+          <div className="flex flex-wrap justify-center gap-6 text-sm font-medium">
+            <a href="#bidang" className="hover:text-teal-800 transition">
               Bidang
             </a>
-            <a href="#artikel" className="hover:text-teal-800">
+            <a href="#artikel" className="hover:text-teal-800 transition">
               Artikel
             </a>
-            <a href="#peraturan" className="hover:text-teal-800">
+            <a href="#peraturan" className="hover:text-teal-800 transition">
               Peraturan
             </a>
-            <Link href="/kontak" className="hover:text-teal-800">
+            <Link href="/kontak" className="hover:text-teal-800 transition">
               Kontak
             </Link>
-            <Link href="/login" className="hover:text-teal-800">
-              Masuk
-            </Link>
+            {profile ? (
+              <Link href={dashboardHref} className="text-teal-700 font-semibold hover:underline">
+                Dashboard
+              </Link>
+            ) : (
+              <Link href="/login" className="hover:text-teal-800 transition">
+                Masuk
+              </Link>
+            )}
           </div>
         </div>
         <div className="mx-auto mt-8 max-w-6xl border-t border-slate-100 px-4 pt-4 text-center text-xs text-slate-400">
