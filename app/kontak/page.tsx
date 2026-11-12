@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { Brand } from '@/components/ui'
 import LogoutButton from '@/components/LogoutButton'
+import OpenBotButton from '@/components/OpenBotButton'
 
 // Nomor WhatsApp: 0812... -> https://wa.me/62812...
 function waLink(value: string) {
@@ -192,15 +193,22 @@ export default async function KontakPage() {
                     </p>
                   </div>
 
-                  <a
-                    href={href}
-                    target={c.type === 'telepon' ? undefined : '_blank'}
-                    rel="noreferrer"
-                    className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-teal-800 transition"
-                  >
-                    <span>{action}</span>
-                    <span className="ml-1.5">&rarr;</span>
-                  </a>
+                  {c.type === 'chatbot' ? (
+                    <OpenBotButton className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-teal-800 transition">
+                      <span>Buka Chatbot MindSpace</span>
+                      <span className="ml-1.5">&rarr;</span>
+                    </OpenBotButton>
+                  ) : (
+                    <a
+                      href={href}
+                      target={c.type === 'telepon' ? undefined : '_blank'}
+                      rel="noreferrer"
+                      className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-teal-700 px-4 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-teal-800 transition"
+                    >
+                      <span>{action}</span>
+                      <span className="ml-1.5">&rarr;</span>
+                    </a>
+                  )}
                 </div>
               )
             })}
