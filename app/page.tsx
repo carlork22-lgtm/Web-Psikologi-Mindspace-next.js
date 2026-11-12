@@ -65,39 +65,44 @@ const BIDANG_PSIKOLOGI = [
   },
 ]
 
-const ARTIKEL_ILMIAH = [
+const ARTIKEL_MINDSPACE = [
   {
-    id: 1,
-    judul: 'Pengaruh Lingkungan Kerja dan Iklim Organisasi terhadap Kesejahteraan Psikologis Karyawan',
-    kategori: 'Psikologi Industri & Organisasi',
-    ringkasan:
-      'Kesejahteraan psikologis karyawan berkaitan erat dengan produktivitas dan kepuasan kerja. Studi menunjukkan bahwa dukungan emosional dan apresiasi di tempat kerja dapat menurunkan risiko kelelahan kerja (burnout).',
-    sumberIlmiah:
-      'Jurnal Psikologi Industri dan Organisasi Indonesia, Vol. 11, No. 2, Hal. 104-118 (Placeholder Sumber Ilmiah)',
-    tanggal: '12 November 2026',
-    penulis: 'Tim Riset MindSpace',
+    nomor: '01',
+    judul: 'Menjaga Motivasi di Tengah Tekanan Pekerjaan',
+    kategori: 'Motivasi Kerja',
+    kutipan: '“Tidak harus menyelesaikan semuanya hari ini. Satu langkah kecil tetap merupakan sebuah kemajuan.”',
+    paragraf: [
+      'Setiap pekerjaan memiliki tantangannya sendiri. Tugas yang menumpuk, tenggat waktu, dan tanggung jawab yang besar terkadang membuat semangat kerja menurun. Namun, bukan berarti kamu harus menyerah atau memaksakan diri untuk menyelesaikan semuanya sekaligus.',
+      'Cobalah membagi pekerjaan menjadi bagian-bagian kecil, mengingat kembali tujuan yang ingin dicapai, dan memberikan waktu bagi diri sendiri untuk beristirahat. Hargai setiap kemajuan, sekecil apa pun itu.',
+      'Ingat, produktivitas bukan tentang seberapa banyak pekerjaan yang diselesaikan dalam satu waktu, tetapi juga bagaimana kamu menjaga diri selama prosesnya.',
+    ],
+    sumber: 'Gusti Ayu Tita P. (21 Agustus 2025). Bagaimana Caranya Tetap Termotivasi Meski Pekerjaan Terasa Berat? Universitas STEKOM.',
+    link: 'https://stekom.ac.id/artikel/bagaimana-caranya-tetap-termotivasi-meski-pekerjaan-terasa-berat',
   },
   {
-    id: 2,
-    judul: 'Strategi Manajemen Stres Kerja dan Pencegahan Burnout pada Karyawan di Era Modern',
-    kategori: 'Psikologi Klinis & Terapan',
-    ringkasan:
-      'Tekanan kerja yang terus-menerus tanpa penanganan tepat dapat berkembang menjadi kecemasan berlebih. Penerapan mindfulness dan konseling berkala terbukti efektif mengembalikan kestabilan regulasi emosi.',
-    sumberIlmiah:
-      'Indonesian Journal of Clinical Psychology and Mental Health, Vol. 8, No. 1, Hal. 45-60 (Placeholder Sumber Ilmiah)',
-    tanggal: '10 November 2026',
-    penulis: 'Tim Riset MindSpace',
+    nomor: '02',
+    judul: 'Lingkungan Kerja yang Sehat Dimulai dari Rasa Saling Menghargai',
+    kategori: 'Lingkungan Kerja',
+    kutipan: '“Kamu tidak hanya berhak mendapatkan pekerjaan yang layak, tetapi juga lingkungan yang membuatmu merasa nyaman dan dihargai.”',
+    paragraf: [
+      'Lingkungan kerja memiliki pengaruh terhadap suasana hati, kenyamanan, dan produktivitas karyawan. Komunikasi yang baik, hubungan antarrekan kerja yang suportif, serta pembagian tugas yang jelas merupakan beberapa hal yang mendukung terciptanya lingkungan kerja yang sehat.',
+      'Sebaliknya, konflik berkepanjangan, komunikasi yang tidak nyaman, dan kurangnya dukungan dapat membuat karyawan merasa tertekan. Karena itu, menciptakan tempat kerja yang positif bukan hanya tanggung jawab individu, tetapi juga seluruh pihak dalam organisasi.',
+    ],
+    sumber: 'Serikat Pekerja Nasional (11 Maret 2021). Lingkungan Kerja yang Sehat.',
+    link: 'https://spn.or.id/lingkungan-kerja-yang-sehat/',
   },
   {
-    id: 3,
-    judul: 'Menjaga Work-Life Balance: Dampak Dinamika Relasi Sosial terhadap Kualitas Hidup Tenaga Kerja',
-    kategori: 'Psikologi Sosial & Kesejahteraan',
-    ringkasan:
-      'Relasi antarpribadi di luar pekerjaan memberikan ketahanan mental ketika menghadapi tantangan profesional. Artikel ini membahas batas sehat antara tuntutan kantor dan ruang personal.',
-    sumberIlmiah:
-      'Jurnal Penelitian Ilmu Psikologi Terapan, Vol. 14, No. 3, Hal. 210-225 (Placeholder Sumber Ilmiah)',
-    tanggal: '05 November 2026',
-    penulis: 'Tim Riset MindSpace',
+    nomor: '03',
+    judul: 'Mencari Konseling Bukanlah Tanda Kelemahan',
+    kategori: 'Konseling Psikologis',
+    kutipan: '“Meminta bantuan bukan berarti kamu tidak mampu. Terkadang, itu adalah bentuk keberanian untuk menjaga diri sendiri.”',
+    paragraf: [
+      'Dalam menghadapi tekanan pekerjaan, tidak semua permasalahan harus diselesaikan sendirian. Ada kalanya seseorang membutuhkan ruang untuk bercerita, memahami perasaannya, dan menemukan sudut pandang baru terhadap masalah yang sedang dihadapi.',
+      'Konseling dapat menjadi salah satu langkah untuk mengenali kondisi emosional, mengelola stres, serta mengembangkan strategi menghadapi tantangan dengan lebih sehat.',
+      'Jangan menunggu sampai merasa benar-benar kewalahan untuk mencari bantuan. Mengenali kebutuhan diri dan berani meminta dukungan merupakan bagian dari menjaga kesejahteraan psikologis.',
+    ],
+    sumber: 'UPT Pengembangan Karier (18 Juni). Jangan Takut Minta Bantuan: Mengapa Mencari Konseling Adalah Tanda Kekuatan, Bukan Kelemahan.',
+    link: 'https://cdc.uinssc.ac.id/jangan-takut-minta-bantuan-mengapa-mencari-konseling-adalah-tanda-kekuatan-bukan-kelemahan-p2523',
   },
 ]
 
@@ -156,8 +161,11 @@ export default async function HomePage() {
             <a href="#bidang" className="text-slate-600 hover:text-teal-800 transition">
               Bidang Layanan
             </a>
+            <a href="#peran-psikolog" className="text-slate-600 hover:text-teal-800 transition">
+              Peran Psikolog
+            </a>
             <a href="#artikel" className="text-slate-600 hover:text-teal-800 transition">
-              Artikel Ilmiah
+              Artikel MINDSPACE
             </a>
             <a href="#peraturan" className="text-slate-600 hover:text-teal-800 transition">
               Peraturan
@@ -171,7 +179,7 @@ export default async function HomePage() {
             {profile ? (
               <div className="flex items-center gap-3">
                 <div className="hidden sm:flex flex-col text-right">
-                  <span className="text-xs font-semibold text-slate-500 uppercase">
+                  <span className="text-[11px] font-bold text-teal-800 uppercase">
                     {profile.role === 'konselor' ? 'Psikolog' : 'Konseli'}
                   </span>
                   <span className="text-xs font-bold text-slate-800 max-w-[140px] truncate">
@@ -253,7 +261,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-6xl px-4 py-12 space-y-20">
+      <main className="mx-auto max-w-6xl px-4 py-12 space-y-24">
         {/* 1. Bidang Layanan Psikologi */}
         <section id="bidang" className="scroll-mt-20">
           <div className="mb-8 text-center sm:text-left">
@@ -307,48 +315,151 @@ export default async function HomePage() {
           )}
         </section>
 
-        {/* 2. Artikel Ilmiah */}
-        <section id="artikel" className="scroll-mt-20">
-          <div className="mb-8 text-center sm:text-left">
-            <span className="text-sm font-semibold uppercase tracking-wider text-teal-700">
-              Edukasi & Wawasan
+        {/* 2. Mengenal Psikolog yang Berperan dalam Kesejahteraan Karyawan */}
+        <section id="peran-psikolog" className="scroll-mt-20 rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50/60 via-white to-slate-50 p-6 sm:p-10 shadow-xs">
+          <div className="mb-8">
+            <span className="rounded-full bg-teal-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal-800">
+              Edukasi Peran Profesional
             </span>
-            <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
-              Artikel Edukatif Ilmiah
+            <h2 className="mt-3 text-2xl font-extrabold text-slate-950 sm:text-3xl">
+              Mengenal Psikolog yang Berperan dalam Kesejahteraan Karyawan
             </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Artikel referensi ilmiah untuk mendukung kesehatan mental dan produktivitas di tempat kerja.
+            <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl">
+              Dalam mendukung kesehatan mental dan produktivitas tenaga kerja, terdapat dua peran psikolog utama yang saling melengkapi dengan pendekatan dan ruang lingkup yang berbeda.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {ARTIKEL_ILMIAH.map((art) => (
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Card 1: Psikolog Klinis */}
+            <div className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
+              <div>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-700 font-bold text-white text-lg">
+                    1
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900">Psikolog Klinis</h3>
+                    <span className="text-xs font-semibold text-teal-700">Fokus: Kondisi Psikologis Individu</span>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                  Psikolog klinis berfokus pada <strong>kesehatan mental dan kondisi psikologis individu</strong>. Mereka dapat membantu seseorang menghadapi permasalahan seperti stres, kecemasan, depresi, trauma, hingga kesulitan mengelola emosi.
+                </p>
+              </div>
+              <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50/70 p-4">
+                <p className="text-xs font-bold text-teal-900">Kapan membutuhkan psikolog klinis?</p>
+                <p className="mt-1 text-xs sm:text-sm text-teal-800 leading-relaxed">
+                  Ketika tekanan pekerjaan mulai memengaruhi kondisi emosional, aktivitas sehari-hari, kualitas tidur, atau kesehatan mental.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: Psikolog PIO */}
+            <div className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
+              <div>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-700 font-bold text-white text-lg">
+                    2
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900">Psikolog Industri dan Organisasi (PIO)</h3>
+                    <span className="text-xs font-semibold text-teal-700">Fokus: Perilaku Manusia di Lingkungan Kerja</span>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                  Psikolog industri dan organisasi berfokus pada <strong>perilaku manusia dalam lingkungan kerja</strong>. Bidang ini berkaitan dengan motivasi karyawan, kepuasan kerja, budaya organisasi, kepemimpinan, komunikasi antarkaryawan, serta kesejahteraan di tempat kerja.
+                </p>
+              </div>
+              <div className="mt-5 rounded-xl border border-teal-100 bg-teal-50/70 p-4">
+                <p className="text-xs font-bold text-teal-900">Kapan membutuhkan psikolog PIO?</p>
+                <p className="mt-1 text-xs sm:text-sm text-teal-800 leading-relaxed">
+                  Ketika perusahaan ingin menciptakan lingkungan kerja yang lebih sehat, meningkatkan kenyamanan karyawan, atau memahami permasalahan yang terjadi dalam organisasi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Perbedaan Keduanya */}
+          <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6">
+            <h4 className="text-base font-bold text-slate-900">Apa perbedaan keduanya?</h4>
+            <p className="mt-2 text-sm leading-relaxed text-slate-700">
+              <strong>Psikolog klinis</strong> lebih berfokus pada kondisi psikologis individu, sedangkan <strong>psikolog industri dan organisasi</strong> lebih berfokus pada hubungan antara individu, pekerjaan, dan lingkungan organisasi.
+            </p>
+            <p className="mt-2 text-sm font-medium text-teal-900">
+              ✨ Keduanya dapat berperan dalam mendukung kesejahteraan psikologis karyawan, dengan pendekatan dan ruang lingkup yang berbeda.
+            </p>
+          </div>
+        </section>
+
+        {/* 3. Artikel MINDSPACE */}
+        <section id="artikel" className="scroll-mt-20">
+          <div className="mb-8 text-center sm:text-left">
+            <span className="text-sm font-semibold uppercase tracking-wider text-teal-700">
+              Artikel MINDSPACE
+            </span>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
+              Wawasan & Inspirasi Kesejahteraan Kerja
+            </h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Baca artikel pilihan untuk membantu Anda mengelola stres, menjaga motivasi kerja, dan membangun hubungan kerja yang sehat.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-3">
+            {ARTIKEL_MINDSPACE.map((art) => (
               <article
-                key={art.id}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs"
+                key={art.nomor}
+                className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xs transition hover:shadow-md hover:border-teal-300"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-slate-500">
-                    <span className="font-semibold text-teal-700">{art.kategori}</span>
-                    <span>{art.tanggal}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-black text-teal-200">{art.nomor}</span>
+                    <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800 border border-teal-100">
+                      {art.kategori}
+                    </span>
                   </div>
-                  <h3 className="mt-3 text-base font-bold leading-snug text-slate-900">
+
+                  <h3 className="mt-4 text-lg font-bold leading-snug text-slate-900">
                     {art.judul}
                   </h3>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                    {art.ringkasan}
-                  </p>
+
+                  {/* Kutipan Utama */}
+                  <blockquote className="mt-3 rounded-xl bg-slate-50 border-l-4 border-teal-600 p-3 text-xs italic font-medium text-slate-700 leading-relaxed">
+                    {art.kutipan}
+                  </blockquote>
+
+                  {/* Isi Paragraf Artikel */}
+                  <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-600">
+                    {art.paragraf.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
                 </div>
-                <div className="mt-6 border-t border-slate-100 pt-3">
-                  <p className="text-xs text-slate-400 font-semibold uppercase">Sumber Ilmiah:</p>
-                  <p className="mt-1 text-xs italic text-slate-600">{art.sumberIlmiah}</p>
+
+                {/* Sumber Ilmiah & Link */}
+                <div className="mt-6 border-t border-slate-100 pt-4">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    Sumber Referensi:
+                  </p>
+                  <p className="mt-1 text-xs italic text-slate-600 leading-relaxed">
+                    {art.sumber}
+                  </p>
+                  <a
+                    href={art.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 hover:text-teal-900 hover:underline"
+                  >
+                    <span>Buka tautan artikel asli</span>
+                    <span>&rarr;</span>
+                  </a>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        {/* 3. Peraturan Layanan */}
+        {/* 4. Peraturan Layanan */}
         <section id="peraturan" className="scroll-mt-20">
           <div className="mb-8 text-center sm:text-left">
             <span className="text-sm font-semibold uppercase tracking-wider text-teal-700">
@@ -418,6 +529,9 @@ export default async function HomePage() {
           <div className="flex flex-wrap justify-center gap-6 text-sm font-medium">
             <a href="#bidang" className="hover:text-teal-800 transition">
               Bidang
+            </a>
+            <a href="#peran-psikolog" className="hover:text-teal-800 transition">
+              Peran Psikolog
             </a>
             <a href="#artikel" className="hover:text-teal-800 transition">
               Artikel
