@@ -4,22 +4,22 @@ import LogoutButton from '@/components/LogoutButton'
 
 export const labelCls = 'block text-sm font-medium text-slate-700 mb-1.5'
 export const inputCls =
-  'w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 transition ' +
-  'placeholder:text-slate-400 focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-200'
+  'w-full rounded-xl border border-violet-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 transition ' +
+  'placeholder:text-slate-400 focus:border-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-200'
 export const btnCls =
-  'w-full rounded-xl bg-teal-700 px-4 py-2.5 font-medium text-white shadow-xs transition ' +
-  'hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60'
+  'w-full rounded-xl bg-violet-600 px-4 py-2.5 font-medium text-white shadow-xs transition ' +
+  'hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60'
 export const btnInlineCls =
-  'inline-flex items-center justify-center rounded-xl bg-teal-700 px-4 py-2 text-sm font-medium text-white shadow-xs transition ' +
-  'hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60'
+  'inline-flex items-center justify-center rounded-xl bg-violet-600 px-4 py-2 text-sm font-medium text-white shadow-xs transition ' +
+  'hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60'
 export const btnOutlineCls =
-  'inline-flex items-center justify-center rounded-xl border border-teal-700 px-4 py-2 text-sm font-medium text-teal-800 transition ' +
-  'hover:bg-teal-50 disabled:cursor-not-allowed disabled:opacity-60'
+  'inline-flex items-center justify-center rounded-xl border border-violet-500 px-4 py-2 text-sm font-medium text-violet-700 transition ' +
+  'hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-60'
 
 export function Brand() {
   return (
-    <Link href="/" className="inline-flex items-center gap-2 text-xl font-extrabold tracking-tight text-teal-800 hover:opacity-90 transition">
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-800 font-black text-white text-base">
+    <Link href="/" className="inline-flex items-center gap-2 text-xl font-extrabold tracking-tight text-violet-800 hover:opacity-90 transition">
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-fuchsia-500 font-black text-white text-base">
         M
       </span>
       <span>MindSpace</span>
@@ -56,7 +56,7 @@ export function PageShell({
               <nav className="hidden items-center gap-5 text-sm font-medium md:flex">
                 <Link
                   href="/"
-                  className="text-slate-600 hover:text-teal-800 transition"
+                  className="text-slate-600 hover:text-violet-700 transition"
                   title="Kembali ke halaman utama untuk melihat 6 bidang psikologi, artikel, dan peraturan"
                 >
                   Halaman Utama
@@ -64,22 +64,22 @@ export function PageShell({
                 {home && (
                   <Link
                     href={home}
-                    className="rounded-lg bg-teal-50 px-3 py-1.5 font-semibold text-teal-800 hover:bg-teal-100 transition"
+                    className="rounded-lg bg-violet-50 px-3 py-1.5 font-semibold text-violet-700 hover:bg-violet-100 transition"
                   >
                     Dashboard Saya
                   </Link>
                 )}
                 {userRole === 'konseli' && (
                   <>
-                    <Link href="/konseli/bidang" className="text-slate-600 hover:text-teal-800 transition">
+                    <Link href="/konseli/bidang" className="text-slate-600 hover:text-violet-700 transition">
                       Pilih Bidang
                     </Link>
-                    <Link href="/konseli/riwayat" className="text-slate-600 hover:text-teal-800 transition">
+                    <Link href="/konseli/riwayat" className="text-slate-600 hover:text-violet-700 transition">
                       Riwayat Konseling
                     </Link>
                   </>
                 )}
-                <Link href="/kontak" className="text-slate-600 hover:text-teal-800 transition">
+                <Link href="/kontak" className="text-slate-600 hover:text-violet-700 transition">
                   Kontak & Chatbot
                 </Link>
               </nav>
@@ -101,27 +101,27 @@ export function PageShell({
           </div>
 
           {/* Sub-navbar responsif mobile */}
-          <div className="border-t border-slate-100 bg-slate-50 px-4 py-2 md:hidden overflow-x-auto">
+          <div className="border-t border-slate-100 bg-violet-50/50 px-4 py-2 md:hidden overflow-x-auto">
             <div className="flex items-center gap-4 text-xs whitespace-nowrap">
-              <Link href="/" className="font-medium text-slate-700 hover:text-teal-800">
+              <Link href="/" className="font-medium text-slate-700 hover:text-violet-700">
                 🏠 Halaman Utama
               </Link>
               {home && (
-                <Link href={home} className="font-semibold text-teal-800">
+                <Link href={home} className="font-semibold text-violet-700">
                   Dashboard
                 </Link>
               )}
               {userRole === 'konseli' && (
                 <>
-                  <Link href="/konseli/bidang" className="text-slate-700 hover:text-teal-800">
+                  <Link href="/konseli/bidang" className="text-slate-700 hover:text-violet-700">
                     Pilih Bidang
                   </Link>
-                  <Link href="/konseli/riwayat" className="text-slate-700 hover:text-teal-800">
+                  <Link href="/konseli/riwayat" className="text-slate-700 hover:text-violet-700">
                     Riwayat
                   </Link>
                 </>
               )}
-              <Link href="/kontak" className="text-slate-700 hover:text-teal-800">
+              <Link href="/kontak" className="text-slate-700 hover:text-violet-700">
                 Kontak
               </Link>
             </div>
@@ -132,7 +132,7 @@ export function PageShell({
           {back && (
             <Link
               href={back.href}
-              className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-900 hover:underline"
+              className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 hover:text-violet-800 hover:underline"
             >
               <span>&larr;</span> {back.label}
             </Link>
@@ -146,8 +146,8 @@ export function PageShell({
         <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {new Date().getFullYear()} MindSpace &middot; Ruang Aman untuk Kesejahteraan Psikologis Karyawan</p>
           <div className="flex gap-4">
-            <Link href="/" className="hover:text-teal-800">Halaman Utama</Link>
-            <Link href="/kontak" className="hover:text-teal-800">Bantuan</Link>
+            <Link href="/" className="hover:text-violet-700">Halaman Utama</Link>
+            <Link href="/kontak" className="hover:text-violet-700">Bantuan</Link>
           </div>
         </div>
       </footer>
@@ -165,7 +165,7 @@ export function AuthCard({ title, children }: { title: string; children: ReactNo
           <h1 className="mt-3 text-lg font-bold text-slate-900">{title}</h1>
           <p className="mt-1 text-xs text-slate-500">
             Kembali ke{' '}
-            <Link href="/" className="font-medium text-teal-700 hover:underline">
+            <Link href="/" className="font-medium text-violet-600 hover:underline">
               Halaman Utama
             </Link>
           </p>
@@ -199,12 +199,12 @@ export function ErrorBox({ message }: { message: string | null }) {
 
 const STATUS: Record<string, { label: string; cls: string }> = {
   menunggu_pembayaran: { label: 'Menunggu pembayaran', cls: 'bg-amber-100 text-amber-800 border-amber-200' },
-  terkonfirmasi: { label: 'Terkonfirmasi', cls: 'bg-teal-100 text-teal-800 border-teal-200' },
+  terkonfirmasi: { label: 'Terkonfirmasi', cls: 'bg-violet-100 text-violet-800 border-violet-200' },
   selesai: { label: 'Selesai', cls: 'bg-slate-200 text-slate-700 border-slate-300' },
   dibatalkan: { label: 'Dibatalkan', cls: 'bg-red-100 text-red-700 border-red-200' },
   izin: { label: 'Izin Sakit', cls: 'bg-blue-100 text-blue-800 border-blue-200' },
   belum_bayar: { label: 'Belum bayar', cls: 'bg-amber-100 text-amber-800 border-amber-200' },
-  lunas: { label: 'Lunas', cls: 'bg-teal-100 text-teal-800 border-teal-200' },
+  lunas: { label: 'Lunas', cls: 'bg-emerald-100 text-emerald-800 border-emerald-200' },
   kedaluwarsa: { label: 'Kedaluwarsa', cls: 'bg-red-100 text-red-700 border-red-200' },
 }
 
