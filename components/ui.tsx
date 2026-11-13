@@ -5,7 +5,7 @@ import LogoutButton from '@/components/LogoutButton'
 export const labelCls = 'block text-sm font-medium text-slate-700 mb-1.5'
 export const inputCls =
   'w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 transition ' +
-  'placeholder:text-slate-400 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-200'
+  'placeholder:text-slate-400 focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-200'
 export const btnCls =
   'w-full rounded-xl bg-teal-700 px-4 py-2.5 font-medium text-white shadow-xs transition ' +
   'hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-60'
